@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+import peanut from './peanut.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src="https://i.imgur.com/cGZblvg.png" className="App-logo" alt="logo" />
+        <h1>Big John</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Ask about protection from him
+        </p>
+        <p>
+          Everybody want that
         </p>
         <a
           className="App-link"
@@ -15,8 +19,14 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Inquire for rate
         </a>
+        <ul>
+          Services
+          <li>squirrels</li>
+          <li>other room sounds</li>
+          <li>sudden movements</li>
+        </ul>
       </header>
     </div>
   );
