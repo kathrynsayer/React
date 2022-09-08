@@ -1,6 +1,7 @@
 import peanut from './peanut.png';
 import './App.css';
 import React from 'react';
+import FilmsList from './components/filmsList';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class App extends React.Component {
           return <li key={item + idx}>{item}</li>
         })}
         </ul>
+        <FilmsList />
       </div>
     );
   }
