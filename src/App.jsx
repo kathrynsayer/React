@@ -1,44 +1,37 @@
 import peanut from './peanut.png';
 import './App.css';
-import React from 'react';
+import { useState } from 'react';
 import FilmsList from './components/filmsList';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    
-    this.state = {
-      list: ['ready', 'set', 'GO'],
-      text: "",
-    };
+function App (props) {
+    let [list, setList] = useState(["ready", "set", "GO"]);
+    let [text, setText] = useState("");
 
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onSubmit(event) {
+  
+  function onSubmit(event) {
     event.preventDefault();
 
-    let newList = [...this.state.list, this.state.text];
-    this.setState({ list: newList, text: ""});
+    let newList = [...list, text];
+    setList(newList);
+    setText("");
   }
 
-  render() {
     return (
       <div>
         <h1>Hello World</h1>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={onSubmit}>
         <input 
         type="text" 
         name="text" 
         id="text" 
-        value={this.state.text} 
-        onChange={(event) => this.setState({ text: event.target.value})} 
+        value={text} 
+        onChange={(event) => setText(event.target.value)}
         />
         <button type="submit">Add</button>
         </form>
         
         <ul>
-        {this.state.list.map((item, idx) => {
+        {list.map((item, idx) => {
           return <li key={item + idx}>{item}</li>
         })}
         </ul>
@@ -46,6 +39,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
+
 
 export default App;
